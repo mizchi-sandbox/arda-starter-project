@@ -1,0 +1,12 @@
+node_modules
+bower_components
+.sass-cache
+lib
+src/types
+.idea
+typings
+public/kobito.*
+public/*.css
+public/js/*.js
+public/env/*.js
+test/e2e/screenshots/*.png
