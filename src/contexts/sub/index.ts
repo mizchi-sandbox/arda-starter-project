@@ -1,4 +1,3 @@
-import subscriber = require('./subscriber');
 import d = require('./defs')
 
 class SubContext extends Arda.Context<d.Props, d.State, d.ComponentProps> {

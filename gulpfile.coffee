@@ -13,7 +13,7 @@ gulp.task 'build', [
 ]
 
 gulp.task 'build:ts', shell.task [
-  './node_modules/.bin/tsc -d -m commonjs  --preserveConstEnums -t es5 --sourceMap --outDir lib src/entry.ts'
+  '$(npm bin)/tsc -d -m commonjs  --preserveConstEnums -t es5 --sourceMap --outDir lib src/entry.ts'
 ]
 
 gulp.task 'build:coffee', ->
@@ -32,12 +32,13 @@ gulp.task 'build:css', ->
     .pipe(sass())
     .pipe(gulp.dest('public'))
 
+gulp.task 'build:web', shell.task [
+  '$(npm bin)/browserify -o public/bundle.js lib/index.js'
+]
+
 gulp.task 'watch', ['build'], ->
   gulp.watch 'src/**/*.coffee', ['build:coffee']
   gulp.watch 'src/**/*.ts', ['build:ts']
   gulp.watch 'src/**/*.jade', ['build:jade']
   gulp.watch 'src/styles/**/*.scss', ['build:css']
-
-gulp.task 'build:web', shell.task [
-  './node_modules/.bin/browserify -o public/bundle.js lib/index.js'
-]
+  gulp.watch 'lib/**/*', ['build:web']

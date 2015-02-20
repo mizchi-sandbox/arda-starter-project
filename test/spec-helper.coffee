@@ -9,16 +9,10 @@ global.TestUtils = React.addons.TestUtils
 # Libraries
 require '../lib/setup/globals'
 
-# stubs
-global.localStorage = require('localStorage')
-
 # Assert
 global.assert = require 'power-assert'
-cheerio = require 'cheerio'
 sinon = require 'sinon'
 
 # test helper
-global.$ = (html) -> cheerio.load html
-
 beforeEach -> @sinon = sinon.sandbox.create()
 afterEach  -> @sinon.restore()
