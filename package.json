@@ -1,6 +1,6 @@
 {
   "name": "arda-starter-project",
-  "version": "0.0.1",
+  "version": "0.13.1",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
