@@ -3,6 +3,7 @@ shell  = require 'gulp-shell'
 coffee = require 'gulp-coffee'
 sass   = require 'gulp-sass'
 jade   = require 'gulp-react-jade'
+watchify = require 'gulp-watchify'
 
 gulp.task 'default', ['build']
 gulp.task 'build', [
@@ -36,9 +37,18 @@ gulp.task 'build:web', shell.task [
   '$(npm bin)/browserify -o public/bundle.js lib/index.js'
 ]
 
-gulp.task 'watch', ['build'], ->
+watching = false
+gulp.task 'enable-watch-mode', -> watching = true
+gulp.task 'browserify', watchify (watchify) ->
+  gulp.src 'lib/index.js'
+    .pipe watchify
+      watch: watching
+    .pipe gulp.dest 'public/js/bundle.js'
+
+gulp.task 'watchify', ['enable-watch-mode', 'browserify']
+gulp.task 'watch', ['build', 'enable-watch-mode', 'watchify'], ->
   gulp.watch 'src/**/*.coffee', ['build:coffee']
   gulp.watch 'src/**/*.ts', ['build:ts']
   gulp.watch 'src/**/*.jade', ['build:jade']
   gulp.watch 'src/styles/**/*.scss', ['build:css']
-  gulp.watch 'lib/**/*', ['build:web']
+

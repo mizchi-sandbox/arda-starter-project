@@ -26,10 +26,12 @@
     "gulp-react-jade": "mizchi/gulp-react-jade#9cfde076190054c29ec4922fc3fe0a178f17b897",
     "gulp-sass": "Keats/gulp-sass#81e4f7dc70f9fc7488b8a65f96f448f4f9538d9d",
     "gulp-shell": "^0.2.11",
+    "gulp-watchify": "^0.3.0",
     "jsdom": "^4.0.1",
     "mocha": "^2.1.0",
     "power-assert": "^0.10.0",
     "sinon": "^1.12.2",
-    "typescript": "1.4.1"
+    "typescript": "1.4.1",
+    "watchify": "^2.4.0"
   }
 }
