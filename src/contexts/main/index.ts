@@ -2,10 +2,8 @@ import subscriber = require('./subscriber');
 import d = require('./defs')
 
 class MainContext extends Arda.Context<d.Props, d.State, d.ComponentProps> {
-  static component = require('../../components/main');
-  static subscribers = [
-    subscriber
-  ];
+  get component(){ return require('../../components/main'); }
+  get subscribers(){ return [subscriber]; }
 
   public initState(props){
     return {};
