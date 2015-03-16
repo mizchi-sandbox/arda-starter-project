@@ -26,7 +26,7 @@
     "gulp-react-jade": "mizchi/gulp-react-jade#9cfde076190054c29ec4922fc3fe0a178f17b897",
     "gulp-sass": "^1.2.4",
     "gulp-shell": "^0.2.11",
-    "jsdom": "^2.0.0",
+    "jsdom": "^4.0.1",
     "mocha": "^2.1.0",
     "power-assert": "^0.10.0",
     "sinon": "^1.12.2",
