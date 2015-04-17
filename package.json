@@ -24,7 +24,7 @@
     "gulp-coffee": "^2.2.0",
     "gulp-plumber": "^0.6.6",
     "gulp-react-jade": "mizchi/gulp-react-jade#9cfde076190054c29ec4922fc3fe0a178f17b897",
-    "gulp-sass": "Keats/gulp-sass#81e4f7dc70f9fc7488b8a65f96f448f4f9538d9d",
+    "gulp-sass": "Keats/gulp-sass#801b1a51265ef3675979cfcf647cc6a90bc0f52f",
     "gulp-shell": "^0.2.11",
     "gulp-watchify": "^0.3.0",
     "jsdom": "^4.0.1",
